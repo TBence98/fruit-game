@@ -1,0 +1,17 @@
+.screen_container {
+    background-image: url("../../assets/screen.png");
+    background-size: contain;
+    width: 523px;
+    height: 387px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.image_container {
+}
+
+.image_container--selected {
+    border: 5px dashed #0f0;
+}

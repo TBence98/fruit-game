@@ -1,0 +1,7 @@
+.game_container {
+    position: fixed;
+    inset: 0;
+    background-image: url("../../assets/background.png");
+    display: grid;
+    grid-template-rows: 66vh auto;
+}
