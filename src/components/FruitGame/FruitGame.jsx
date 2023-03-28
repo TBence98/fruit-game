@@ -74,19 +74,14 @@ const FruitGame = () => {
             /* if the program hit these lines it means that the selectedFruit 
             was successfully placed so we have to remove the selected and active state
             from the fruitGroup*/
-            const selectedFruitGroupIndex = poolDatas.findIndex(
-                (fruitGroup) => fruitGroup.id === selectedFruit
-            );
-
-            const poolDatasCopy = poolDatas.map((poolData) => ({
-                ...poolData,
-            }));
-
-            poolDatasCopy[selectedFruitGroupIndex].isSelected = false;
-            poolDatasCopy[selectedFruitGroupIndex].isActiveInPool = false;
+            const updatedPoolDatas = poolDatas.map((poolData) => {
+                return poolData.id === selectedFruit
+                    ? { ...poolData, isSelected: false, isActiveInPool: false }
+                    : { ...poolData, isSelected: false };
+            });
 
             setScreenDatas(screenDatasCopy);
-            setPoolDatas(poolDatasCopy);
+            setPoolDatas(updatedPoolDatas);
             setSelectedFruit("");
         }
     }
